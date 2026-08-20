@@ -1,0 +1,18 @@
+.channelButton {
+    bottom: -3px;
+    right: -3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    border: 1px solid #e0e0e0;
+    background-color: var(--color-light-1);
+    color: var(--color-light-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.selected {
+        background-color: var(--color-primary-1);
+        border-color: var(--color-primary-1);
+    }
+}

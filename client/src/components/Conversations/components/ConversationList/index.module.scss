@@ -1,0 +1,64 @@
+.conversationListContainer {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-width: 1px;
+    border-color: var(--color-light-3);
+    border-style: solid;
+    border-top-width: 2px;
+    .listContainer {
+        position: relative;
+        height: 100%;
+        .blur {
+            opacity: 0.5;
+            > div:first-child {
+                > div {
+                    overflow: hidden !important;
+                }
+            }
+
+            &:after {
+                position: absolute;
+                inset: 0;
+                z-index: 10;
+                opacity: 0.4;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                transition: all 0.3s;
+                content: '';
+                pointer-events: auto;
+            }
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .loadingContainer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > span {
+            z-index: 11;
+        }
+    }
+}
+.errorContainer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-color: var(--color-light-3);
+    border-style: solid;
+    border-top-width: 2px;
+}

@@ -1,0 +1,35 @@
+export const ROOM_CREATED = 'room.created';
+export const ROOM_JOINED = 'room.joined';
+export const ROOM_LEFT = 'room.left';
+export const ROOM_UPDATED = 'room.updated';
+export const ROOM_NEW_MESSAGE = 'room.message';
+export const ROOM_TYPING = 'room.typing';
+export const ROOM_INIT_PEER = 'room.init_peer';
+export const ROOM_SIGNALING = 'room.signaling';
+export const BU_CONTACT_CREATED = 'bu.contact_created';
+export const BU_CONTACT_UPDATED = 'bu.contact_updated';
+export const ORG_USER_UPDATED = 'org.user_updated';
+export const ROOM_STATUS_UPDATED = 'room.status_updated';
+export const WS_DISCONNECTED = 'disconnect';
+
+export const AGENT_NEEDED = 'conversation.agent_needed';
+export const CREATED_CONVERSATION = 'team_conversation.created';
+export const JOINED_CONVERSATION = 'conversation.joined';
+export const UPDATED_CONVERSATION = 'conversation.updated';
+export const LEFT_CONVERSATION = 'conversation.left';
+export const UPDATED_CONVERSATION_STATUS = 'conversation.status_updated';
+export const UPDATED_CONVERSATION_NAME = 'conversation.name_updated';
+export const CONVERSATION_MESSAGE = 'conversation.message_created';
+export const CONVERSATION_JOIN_ACCEPTED = 'conversation.join_request_accepted';
+export const CONVERSATION_JOIN_REJECTED = 'conversation.join_request_rejected';
+export const CONVERSATION_AGENT_NEEDED = 'conversation.agent_needed';
+export const CONVERSATION_TYPING = 'conversation.typing';
+export const TEAM_JOINED = 'team.joined';
+export const TEAM_UPDATE = 'team.update';
+export const TEAM_USER_ROLE_UPDATED = 'team_user.role.update';
+export const USER_DEACTIVATED = 'org.user_deactivated';
+export const CONTACT_ONLINE = 'conversation.contact_online';
+export const CONTACT_OFFLINE = 'conversation.contact_offline';
+
+export const CONVERSATION_INVITED = 'conversation.invited';
+export const CONVERSATION_ASSIGNED = 'conversation.assigned';

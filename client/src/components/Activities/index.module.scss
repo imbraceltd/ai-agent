@@ -1,0 +1,33 @@
+@mixin align-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+.container {
+    padding: 8px 16px;
+    height: 100%;
+    flex: 1 1 0%;
+    width: 100%;
+    overflow: scroll;
+    .inner {
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        padding: 24px;
+        background: white;
+        border: 1px solid var(--color-light-3);
+        border-radius: 8px;
+        &.frameLess {
+            padding: 8px;
+            border: none;
+            .cards > div {
+                width: calc(50% - 8px);
+            }
+        }
+        .loadingContainer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

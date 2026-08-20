@@ -1,0 +1,12 @@
+.note {
+    background-color: #fafafa;
+    padding: 16px;
+    border-radius: 8px;
+    &.noBackground {
+        background-color: white;
+    }
+}
+.container {
+    position: relative;
+    width: 100%;
+}

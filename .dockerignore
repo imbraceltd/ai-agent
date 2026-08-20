@@ -1,0 +1,59 @@
+# Node modules
+node_modules
+*/node_modules
+**/node_modules
+
+# Build artifacts
+dist
+build
+*/dist
+*/build
+
+# Development files
+*.md
+.git
+.gitignore
+.env*
+.vscode
+.idea
+
+# Keep .npmrc files as they contain build configuration
+!.npmrc
+!**/.npmrc
+
+# Test files
+**/tests
+**/*.test.*
+**/*.spec.*
+
+# CI/CD files
+.github
+.gitlab-ci.yml
+
+# Documentation and examples
+examples
+docs
+README.md
+CHANGELOG.md
+
+# Lock files — exclude all package-lock.json so npm resolves fresh in Docker
+# (prevents EBADPLATFORM when a lockfile generated on x64 is installed on arm64)
+package-lock.json
+yarn.lock
+
+# Temporary files
+.DS_Store
+*.log
+*.tmp
+*.temp
+
+# Development configs (only exclude test/lint configs, NOT build configs)
+vitest.config.*
+jest.config.*
+.eslintrc.*
+.prettierrc.*
+
+# Ansible and deployment
+ansible
+PRPs
+use-cases

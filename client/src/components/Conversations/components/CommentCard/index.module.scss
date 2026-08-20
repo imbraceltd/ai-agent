@@ -1,0 +1,157 @@
+@mixin align-center {
+    display: flex;
+    align-items: center;
+}
+@mixin align-column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+@mixin boxShadow {
+    justify-content: flex-end;
+    flex-grow: 0;
+    flex-shrink: 1;
+    box-shadow: 0px 0px 4px rgba(224, 224, 224, 0.25);
+}
+.card {
+    display: block;
+    border-radius: 4px;
+    background: var(--color-light-2);
+    height: 128px;
+    padding: 16px;
+    width: 100%;
+    @include boxShadow;
+    .conversationCommentsRow {
+        @include align-center;
+        justify-content: space-between;
+        color: var(--color-light-5);
+        .conversationCommentsHeaderText {
+            .titleText {
+                color: var(--color-light-5);
+            }
+            .titleBlueText {
+                color: #156df2;
+            }
+        }
+        .dividerStyle {
+            height: 16px;
+            border-color: var(--color-light-5);
+        }
+    }
+    .conversationCommentsComment {
+        margin-bottom: 12px;
+
+        overflow: auto;
+        // max-height: 70px;
+        p {
+            // width: 90%;
+            overflow-wrap: break-word;
+        }
+        .commentText {
+            color: var(--color-light-7);
+            // font-size: 0.875rem;
+        }
+        .commentNoText {
+            color: #bdbdbd;
+            font-size: 0.875rem;
+        }
+    }
+    .conversationCommentsPadding {
+        padding: 16px;
+    }
+    .conversationCommentsHeight {
+        min-height: 250px;
+    }
+    .conversationCommentsLabel {
+        align-items: flex-start;
+    }
+}
+.conversationCommentsCardEdit {
+    border-radius: 4px;
+    background: #ffffff;
+    height: auto;
+    box-shadow: none;
+}
+.conversationCommentsCardShadow {
+    box-shadow: 0px 16px 40px rgba(224, 224, 224, 0.2);
+}
+
+.conversationCommentsCardView {
+    border-radius: 4px;
+    background: var(--color-light-2);
+    height: 128px;
+    padding: 16px;
+    width: 100%;
+    // margin: 0 16px 16px 0;
+
+    // max-width: 236px;
+}
+.chipsAddLabelContainer {
+    justify-content: flex-end;
+    flex: 0 1 45%;
+    margin-bottom: 5px;
+}
+.chipsAddLabelConversationContainer {
+    box-shadow: 0px 16px 40px rgba(224, 224, 224, 0.2);
+    border: 1px solid #e0e0e0;
+    margin-top: 8px;
+    border-radius: 4px;
+}
+.chipsAddLabelHeight {
+    height: 30px;
+}
+.messageListRoot {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    max-height: 700px;
+    overflow: hidden;
+}
+.noScrollbars {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.loadingContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.blur {
+    opacity: 0.5;
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        opacity: 0.4;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        transition: all 0.3s;
+        content: '';
+        pointer-events: auto;
+    }
+}

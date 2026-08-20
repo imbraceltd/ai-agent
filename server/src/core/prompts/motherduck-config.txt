@@ -1,0 +1,12 @@
+# MotherDuck Data Source URLs
+# Edit these URLs to change the data sources for bond recommendations
+# Lines starting with # are comments and will be ignored
+
+# Customer Profile DataCUSTOMER_PROFILE=https://imbrace-uat.s3.ap-east-1.amazonaws.com/embedding/40_Corp_Masked__1__5feba70d-0bbf-491a-b17c-eb5e956a893f.parquet
+
+
+# Phone Call Transcript Data  
+CONVERSATION_HISTORY=https://imbrace-uat.s3.ap-east-1.amazonaws.com/embedding/9_f5b81360-8e00-4e0c-bddf-930a0557e2f8.parquet
+
+# Product Database
+PRODUCTS_DATA=https://imbrace-uat.s3.ap-east-1.amazonaws.com/embedding/All_bond_list_06-08-2025_fe1e0d0a-33d7-4f44-bda9-abc73689ff50.parquet

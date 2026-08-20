@@ -1,0 +1,37 @@
+.conversationRoot {
+    height: 100%;
+    width: 270px;
+    min-width: 270px;
+    padding: 59px 0 50px 0;
+    overflow: auto;
+    box-sizing: border-box;
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+}
+
+.conversationStatusNav {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.listIcon {
+    height: 100%;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+// .sideBarDrawerClose {
+//     display: none;
+// }
+// .sideBarDrawerOpen {
+//     display: contents;
+// }
+.conversationAddNewViewButton {
+    color: var(--color-primary-1) !important;
+}

@@ -1,0 +1,186 @@
+@mixin align-center {
+    display: inline-flex;
+    align-items: center;
+}
+@mixin align-column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+@mixin align-row {
+    display: inline-flex;
+    flex-flow: row wrap;
+}
+.chipsContainer {
+    position: relative;
+    .chipsLabelFloat {
+        visibility: hidden;
+        position: absolute;
+        background: var(--color-light-2);
+        padding: 11px 16px 16px 16px;
+        z-index: 10;
+        border-radius: 10px;
+        width: 100%;
+        left: 0px;
+        top: 22px;
+        &:hover {
+            visibility: visible;
+            & + .chipsLabelMore {
+                visibility: hidden;
+            }
+        }
+    }
+
+    .chipIndex:hover {
+        & + .chipsLabelFloat {
+            visibility: visible;
+            & + .chipsLabelMore {
+                visibility: hidden;
+                > p {
+                    transition: none;
+                }
+            }
+        }
+    }
+}
+.chipsLabelContainer {
+    display: flex;
+    // padding: 0px 16px 16px 16px;
+    align-items: center;
+    width: 100%;
+}
+.chipsLabels {
+    display: inline-flex;
+    flex-flow: row wrap;
+    gap: 4px;
+    .chip {
+        @include align-center;
+        padding: 4px 12px;
+        border-radius: 30px;
+        color: #ffffff;
+        border: none;
+        &:hover {
+            .chipDelete {
+                display: flex;
+            }
+        }
+    }
+    .chipsLabel {
+        z-index: 6;
+        > p {
+            transition: none;
+        }
+    }
+    .chipDelete {
+        display: none;
+        position: absolute;
+        top: -4px;
+        right: -7px;
+        background: #ffffff;
+        box-shadow: 0px 0px 4px rgba(224, 224, 224, 0.25);
+        border-radius: 30px;
+        color: var(--color-light-5);
+        width: 1.125rem;
+        height: 1.125rem;
+        z-index: 6;
+        &:hover {
+            background: #ffffff;
+            color: var(--color-light-5);
+        }
+    }
+    .chipMargin {
+        z-index: 5;
+        position: relative;
+    }
+    .chipsLabelAdd.chip {
+        background-color: #f7f7f7;
+        color: #bdbdbd;
+        transition: none;
+        > p {
+            transition: none;
+        }
+        &:hover {
+            background-color: #f7f7f7;
+            color: var(--color-light-5);
+            border-radius: 30px;
+            .addIcon {
+                color: var(--color-light-5);
+            }
+        }
+    }
+    .chipsLabelsRelative {
+        display: inline-flex;
+        flex-direction: row;
+    }
+    .chipsLabelMore {
+        margin-left: -4px;
+        z-index: 4;
+        cursor: pointer;
+        .chipsLabelMoreText {
+            @include align-center;
+            width: 22px;
+            height: 22px;
+            padding: 4px;
+            background: #ffffff;
+            border-radius: 30px;
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--color-light-5);
+        }
+    }
+    .chipsLabelsShowMore {
+        @include align-row;
+        z-index: 7;
+        gap: 4px;
+    }
+    .chipsLabelsView {
+        @include align-row;
+        gap: 4px;
+        width: 80%;
+        overflow: hidden scroll;
+    }
+}
+.chipsEditLabels {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.chipsSelectLabelContainer {
+    @include align-column;
+    color: var(--color-light-5);
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 16px;
+    margin-top: 5px;
+    width: 100%;
+    .selectLabelTitle {
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 120%;
+        color: var(--color-light-5);
+    }
+    .chipsSelectLabel {
+        height: 80px;
+        overflow: hidden scroll;
+    }
+}
+.noScrollbars {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+}

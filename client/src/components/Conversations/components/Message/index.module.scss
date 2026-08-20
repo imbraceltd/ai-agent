@@ -1,0 +1,206 @@
+.messageRoot {
+    display: flex;
+    margin: 5px 5px;
+    flex-shrink: 0;
+
+    .messageRootContent {
+        display: flex;
+        max-width: 414px;
+        gap: 5px;
+        align-items: flex-end;
+        .commentContent {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+
+            .hoverIcons {
+                position: absolute;
+                right: -130px;
+                top: 0;
+                max-height: 103px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                background: white;
+                padding: 8px;
+            }
+
+            .hoverIcon {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 4px;
+                cursor: pointer;
+                color: var(--color-light-5);
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: var(--color-primary-1);
+                }
+            }
+
+            .commentIcon {
+                margin-top: 6px;
+                display: none;
+                color: var(--color-light-5);
+                &:hover {
+                    color: var(--color-light-4);
+                }
+            }
+            .commentMessageContent {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #ffffff;
+                align-items: flex-start;
+
+                &:hover {
+                    .commentIcon {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .sent {
+            border-radius: 8px 0px 8px 8px;
+            padding: 16px;
+            background-color: var(--color-primary-4);
+            color: white;
+        }
+
+        .received {
+            border-radius: 0px 8px 8px 8px;
+            padding: 16px;
+            background-color: #f2f2f2;
+            color: var(--color-light-7);
+            &:hover {
+                & + .commentMessageContent .commentIcon {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .messageAvatarPlaceholder {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        min-height: 40px;
+    }
+
+    &.sent {
+        justify-content: flex-end;
+    }
+
+    &.received {
+        justify-content: flex-start;
+    }
+}
+
+.messageContentAudioRoot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+}
+
+.messageContentImageRoot {
+    width: 300px;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.messageContentText {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 300px;
+
+    &.error {
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+.link {
+    a,
+    a:visited {
+        color: var(--color-primary-5);
+        transition: color 0.3s ease;
+        &:hover {
+            color: white;
+            opacity: 1;
+        }
+    }
+}
+
+.messageContentVideoCallBanner {
+    display: flex;
+    flex-direction: row;
+    width: 290px;
+    height: min-content;
+    min-height: 70px;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+
+    .videoCallBannerIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        min-height: 100%;
+        background-color: #1d4b91;
+    }
+
+    .videoCallBannerMessage {
+        min-height: 100%;
+        background-color: #39f;
+        user-select: none;
+        padding: 5px 10px;
+        width: calc(100% - 70px);
+    }
+}
+
+.pdfMessage {
+    svg {
+        font-size: 40px;
+    }
+    > a {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        color: inherit;
+        text-decoration: none;
+        padding: 15px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        &:hover {
+            opacity: 0.7;
+        }
+        > div {
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            > span {
+                display: block;
+                &:first-child {
+                    font-size: 16px;
+                }
+                &:last-child {
+                    color: var(--color-light-5);
+                }
+            }
+        }
+    }
+}
+
+.imagePreview {
+}
+.imagePreviewMask {
+}

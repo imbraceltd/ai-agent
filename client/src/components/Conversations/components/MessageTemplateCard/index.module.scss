@@ -1,0 +1,49 @@
+.msgTemplateDrawerCardRoot {
+    width: 100% !important;
+
+    .msgTemplateDrawerCardContainer {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        background-color: var(--color-light-1);
+        border-radius: 0 !important;
+        border-top-width: 0.5px !important;
+        border-top-color: #ccc;
+        border-top-style: solid;
+
+        &:hover {
+            background: #f2f2f2 !important;
+        }
+
+        .msgTemplateDrawerCardTitle {
+            font-weight: bold;
+            text-align: start;
+            margin-bottom: 10px !important;
+        }
+
+        .msgTemplateDrawerCardContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+
+            .msgTemplateDrawerCardContent {
+                text-align: justify;
+                margin: 0 !important;
+                width: 100%;
+                color: var(--color-light-5);
+            }
+
+            .expandBtnContainer {
+                display: flex;
+                flex-direction: column;
+                min-height: 100%;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

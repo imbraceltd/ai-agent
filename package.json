@@ -1,0 +1,42 @@
+{
+  "name": "fullstack-typescript-app",
+  "version": "1.0.0",
+  "description": "A modern full-stack TypeScript application with Express.js backend and React frontend",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"cd client && pnpm start\"",
+    "build": "npm run build --prefix server && cd client && pnpm build",
+    "start": "npm run start --prefix server",
+    "start:dev": "npm run dev",
+    "install:all": "npm install --prefix server && cd client && pnpm install",
+    "clean": "rm -rf node_modules server/node_modules client/node_modules server/dist client/dist",
+    "clean:build": "rm -rf server/dist client/dist",
+    "type-check": "npm run type-check --prefix server && cd client && pnpm lint:ts",
+    "test": "npm run test --prefix server && cd client && pnpm test",
+    "test:watch": "concurrently \"npm run test:watch --prefix server\" \"cd client && pnpm test\"",
+    "lint": "npm run lint --prefix server && cd client && pnpm lint",
+    "lint:fix": "npm run lint:fix --prefix server && cd client && pnpm lint:fix",
+    "validate": "npm run type-check && npm run lint && npm run test",
+    "preview": "npm run build && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "react",
+    "vite",
+    "full-stack",
+    "winston",
+    "tailwind",
+    "shadcn-ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.9.0",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
